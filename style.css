@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  background: linear-gradient(to bottom, #cce7ff, #f8fff0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.slide { display:none; padding:0 10px; }
+.slide.active { display:flex; justify-content:center; align-items:center; }
+
+.card {
+  background: linear-gradient(145deg, #ffffff, #e6f3e6);
+  padding:2rem;
+  border-radius:20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width:100%;
+  max-width:800px;
+  text-align:left;
+  animation: fadeIn 0.5s ease;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+@media(min-width:768px){
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+}
+
+@keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+
+h1 { font-size:2.5rem; color:#2d6a2d; margin-bottom:0.5rem; }
+h2 { font-size:2rem; color:#2d6a2d; margin-bottom:1rem; }
+h3 { font-size:1.4rem; color:#0066cc; margin-bottom:0.5rem; }
+
+p, li { font-size:1rem; line-height:1.6; color:#333; }
+
+button {
+  padding:10px 20px;
+  margin:10px 5px 0 0;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:1rem;
+  transition: all 0.2s ease;
+}
+button:hover { transform: translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+.btn-next { background: linear-gradient(135deg,#5cb85c,#2d6a2d); color:#fff; }
+.btn-prev { background: linear-gradient(135deg,#a0522d,#6b4226); color:#fff; }
+.btn-reset { background: linear-gradient(135deg,#3399ff,#0066cc); color:#fff; }
+
+#quiz {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 15px;
+  width: 100%; /* ให้เต็มความกว้างการ์ด */
+}
+
+.quiz-question {
+  margin: 15px 0; /* เพิ่มระยะห่างระหว่างคำถาม */
+}
+
+.choice {
+  padding: 12px 15px; /* เพิ่มความสูงของแต่ละ choice */
+  border: 1px solid #d2b48c;
+  border-radius: 10px;
+  margin: 8px 0; /* เพิ่ม spacing ระหว่างตัวเลือก */
+  cursor: pointer;
+  transition: 0.2s;
+  width: 100%; /* เต็มความกว้างการ์ด */
+  box-sizing: border-box;
+}
+.choice:hover { background:#e6f3e6; transform:translateX(2px);}
+.choice.selected { background:#a8e6a3; border-color:#5cb85c; }
+.choice.correct { background:#4caf50; color:#fff; }
+.choice.wrong { background:#f44336; color:#fff; }
+
+#score { font-size:1.3rem; font-weight:700; margin-top:10px; }
+
+.confetti {
+  position:absolute;
+  font-size:20px;
+  animation: rise 2s linear forwards;
+}
+
+.reason-card, .step-card {
+  background:#f0fff0;
+  border-left:5px solid #2d6a2d;
+  padding:10px 15px;
+  margin:6px 0;
+  border-radius:8px;
+}
+
+/* สำหรับ Slide แบบทดสอบ ให้การ์ดเต็มความกว้างเหมือนสไลด์อื่น */
+#slide4 .card {
+  width: 100%;
+  max-width: 800px; /* เท่ากับสไลด์อื่น */
+  padding: 2rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ให้ quiz choice เต็มความกว้างการ์ด */
+#slide4 .choice {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.tip { font-size:0.9rem; color:#555; margin-top:3px; }
+
+@keyframes rise {
+  0% { transform: translateY(0) rotate(0deg); opacity:1;}
+  100% { transform: translateY(-500px) rotate(720deg); opacity:0;}
+}

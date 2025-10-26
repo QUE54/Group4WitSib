@@ -217,3 +217,23 @@ function endGame(){
 restartBtn.addEventListener('click', ()=>{
   window.location.href = "game.html";
 });
+
+const bgMusic = document.getElementById('bgMusic');
+const soundToggle = document.getElementById('soundToggle');
+
+// พยายามเล่นเพลงอัตโนมัติ
+bgMusic.play().catch(e => {
+  console.log("Browser block autoplay, จะเล่นเมื่อผู้เล่นกดปุ่ม");
+  soundToggle.textContent = '🔇 เสียง: ปิด';
+});
+
+// ปุ่มเปิด/ปิด
+soundToggle.addEventListener('click', () => {
+  if(bgMusic.paused){
+    bgMusic.play();
+    soundToggle.textContent = '🔊 เสียง: เปิด';
+  } else {
+    bgMusic.pause();
+    soundToggle.textContent = '🔇 เสียง: ปิด';
+  }
+});

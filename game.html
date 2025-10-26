@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เกมหลบศัตรูพืช</title>
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <h1 style="
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #76c893, #4caf50, #a0dca0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  padding: 20px;
+  border: 5px solid #4caf50;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 20px auto;
+">
+  ? เกมหลบศัตรูพืช ?
+</h1>
+  <div id="gameContainer">
+    <div id="player">🌱</div>
+    <div id="gameOverScreen">
+  <div id="gameOverContent">
+    <h2 id="gameOverText">เกมจบ!</h2>
+    <p id="scoreTime"></p><p id="scoreP"></p><p id="scoreA"></p>
+    <button id="restartBtn">เริ่มใหม่</button>
+    <a href="index.html" class="btn-back">ย้อนกลับ</a>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div id="scoreBoard">หลบได้: 0</div>
+  <div id="timeBoard">เวลา: 0 วินาที</div>
+  
+<script src="game.js"></script>
+</body>
+</html>
